@@ -1,3 +1,4 @@
+import java.util.*;
 public class AbstractList {
     /*
 >bogdan
@@ -18,8 +19,13 @@ remove
 >Hon
 set
 clear
-checkIndex
-
+checkIndex*/
+    private void checkIndex(int index) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("index: " + index);
+        }
+    }
+/*
 >Peter
 hasNext
 next
