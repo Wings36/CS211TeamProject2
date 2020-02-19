@@ -1,5 +1,6 @@
 import java.util.*;
-public class AbstractList {
+public abstract class AbstractList<E> implements List<E> {
+    private int size;
     /*
 >bogdan
 size
@@ -16,6 +17,7 @@ add
 add(int, E)
 remove
 
+
 >Hon
 set
 clear
@@ -31,4 +33,9 @@ hasNext
 next
 remove
      */
+
+//    public boolean hasNext() {
+//        return position < size();
+//    }
+    public abstract void add(int index, E value);
 }

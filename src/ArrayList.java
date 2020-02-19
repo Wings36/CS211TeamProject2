@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-public class ArrayList<E> implements List<E> {
+public class ArrayList<E> implements AbstractList {
     private E[] elementData; // list of values
     private int size;        // current number of elements in the list
 
@@ -151,6 +151,8 @@ public class ArrayList<E> implements List<E> {
             throw new IndexOutOfBoundsException("index: " + index);
         }
     }
+
+
 
     private class ArrayListIterator implements Iterator<E> {
         private int position;           // current position within the list
