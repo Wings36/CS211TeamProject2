@@ -5,8 +5,11 @@ public abstract class AbstractList<E> implements List<E> {
 >bogdan
 size
 get
-toString
-
+toString */
+    public int size() {
+        return size;
+    }
+    /*
 >Logan
 indexOf
 isEmpty
