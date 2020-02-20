@@ -31,11 +31,7 @@ checkIndex*/
         }
     }
 /*
->Peter
-hasNext
-next
-remove
-     */
+
 
 //    public boolean hasNext() {
 //        return position < size();
