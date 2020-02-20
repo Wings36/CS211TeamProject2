@@ -19,18 +19,20 @@ contains
 add
 add(int, E)
 remove
+*/
 
-
->Hon
-set
-clear
-checkIndex*/
+//>Hon
+//set
+    public abstract void set(int index, E value);
+//clear
+    public abstract void clear();
+//checkIndex
     private void checkIndex(int index) {
         if (index < 0 || index >= size()) {
             throw new IndexOutOfBoundsException("index: " + index);
         }
     }
-/*
+
 
 
 //    public boolean hasNext() {
