@@ -27,12 +27,5 @@ public abstract class AbstractList<E> implements List<E> {
 //clear
     public abstract void clear();
 //checkIndex
-    private void checkIndex(int index) {
-        if (index < 0 || index >= size()) {
-            throw new IndexOutOfBoundsException("index: " + index);
-        }
-    }
-
-
-
+    public abstract void checkIndeX(int index);
 }
