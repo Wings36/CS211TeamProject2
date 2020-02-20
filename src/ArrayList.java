@@ -24,6 +24,10 @@ public class ArrayList<E> extends AbstractList<E> {
         this(DEFAULT_CAPACITY);
     }
 
+    // post: returns the current number of elements in the list
+    public int size() {
+        return size;
+    }
 
 
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)

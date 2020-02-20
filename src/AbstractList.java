@@ -18,37 +18,31 @@ indexOf
 isEmpty
 contains
 
->Quynh
-add
-add(int, E)
-remove
+
+//>bogdan
+//size
+//get
+    public abstract E get(int index);
+//toString
+    public abstract int size();
+
+//>Logan
+//indexOf
+//isEmpty
+//contains
+
+//>Quynh
+//add
+//add(int, E)
+//remove
 
 
->Hon
-set
-clear
-checkIndex*/
-    private void checkIndex(int index) {
-        if (index < 0 || index >= size()) {
-            throw new IndexOutOfBoundsException("index: " + index);
-        }
-    }
-/*
->Peter
-hasNext
-next
-remove
-     */
 
-//    public boolean hasNext() {
-//        return position < size();
-//    }
-    public abstract String toString();
-//    public abstract boolean hasNext();
-//    public abstract E next();
-//
-//    public abstract void remove();
-
-
-    public abstract void add(int index, E value);
+//>Hon
+//set
+    public abstract void set(int index, E value);
+//clear
+    public abstract void clear();
+//checkIndex
+    public abstract void checkIndex(int index);
 }
