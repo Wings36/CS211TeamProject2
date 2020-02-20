@@ -27,5 +27,5 @@ public abstract class AbstractList<E> implements List<E> {
 //clear
     public abstract void clear();
 //checkIndex
-    public abstract void checkIndeX(int index);
+    public abstract void checkIndex(int index);
 }
