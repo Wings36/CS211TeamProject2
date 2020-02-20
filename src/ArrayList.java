@@ -51,6 +51,16 @@ public class ArrayList<E> extends AbstractList<E> {
         }
     }
 
+    // post : returns the position of the first occurrence of the given
+    //        value (-1 if not found)
+    public int indexOf(E value) {
+        for (int i = 0; i < size; i++) {
+            if (elementData[i].equals(value)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 
     // post: returns true if list is empty, false otherwise
     public boolean isEmpty() {

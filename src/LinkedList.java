@@ -43,6 +43,20 @@ public class LinkedList<E> extends AbstractList<E> {
         }
     }
 
+    // post : returns the position of the first occurrence of the given
+    //        value (-1 if not found)
+    public int indexOf(E value) {
+        int index = 0;
+        ListNode<E> current = front.next;
+        while (current !=  back) {
+            if (current.data.equals(value)) {
+                return index;
+            }
+            index++;
+            current = current.next;
+        }
+        return -1;
+    }
 
     // post: returns true if list is empty, false otherwise
     public boolean isEmpty() {
@@ -130,9 +144,6 @@ public class LinkedList<E> extends AbstractList<E> {
         }
         return current;
     }
-
-    // post: throws an IndexOutOfBoundsException if the given index is
-    //       not a legal index of the current list
 
 
     private static class ListNode<E> {
