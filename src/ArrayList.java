@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-public class ArrayList<E> implements AbstractList {
+public class ArrayList<E> extends AbstractList<E> {
     private E[] elementData; // list of values
     private int size;        // current number of elements in the list
 
@@ -24,10 +24,7 @@ public class ArrayList<E> implements AbstractList {
         this(DEFAULT_CAPACITY);
     }
 
-    // post: returns the current number of elements in the list
-    public int size() {
-        return size;
-    }
+
 
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
     // post: returns the value at the given index in the list
@@ -90,7 +87,7 @@ public class ArrayList<E> implements AbstractList {
         for (int i = size; i >= index + 1; i--) {
             elementData[i] = elementData[i - 1];
         }
-        elementData[index] = value;
+        elementData[index] = (E) value;
         size++;
     }
 
@@ -122,7 +119,7 @@ public class ArrayList<E> implements AbstractList {
 
     // post: appends all values in the given list to the end of this list
     public void addAll(List<E> other) {
-        for (E value: other) {
+        for (E value : other) {
             add(value);
         }
     }
@@ -151,7 +148,6 @@ public class ArrayList<E> implements AbstractList {
             throw new IndexOutOfBoundsException("index: " + index);
         }
     }
-
 
 
     private class ArrayListIterator implements Iterator<E> {

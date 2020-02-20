@@ -13,7 +13,7 @@ public class ListClient3 {
         processList(list2);
     }
 
-    public static void processList(List<Integer> list) {
+    public static void processList(AbstractList<Integer> list) {
         list.add(42);
         list.add(18);
         list.add(27);

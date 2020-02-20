@@ -43,5 +43,12 @@ remove
 //    public boolean hasNext() {
 //        return position < size();
 //    }
+    public abstract String toString();
+//    public abstract boolean hasNext();
+//    public abstract E next();
+//
+//    public abstract void remove();
+
+
     public abstract void add(int index, E value);
 }
