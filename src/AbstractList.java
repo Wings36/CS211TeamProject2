@@ -28,13 +28,24 @@ contains
 
 //>Logan
 //indexOf
+   public int indexOf(E value) {
+       for (int i = 0; i < size(); i++) {
+           if (value.equals(get(i))) {
+               return i;
+           }
+       }
+       return -1;
+    }
 //isEmpty
 //contains
 
 //>Quynh
 //add
+    public abstract void add (E value);
 //add(int, E)
+    public abstract void add(int index, E value);
 //remove
+
 
 
 
@@ -44,5 +55,12 @@ contains
 //clear
     public abstract void clear();
 //checkIndex
-    public abstract void checkIndex(int index);
+    void checkIndex(int index) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("index: " + index);
+        }
+    }
+
+
+
 }
