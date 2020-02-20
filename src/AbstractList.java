@@ -9,6 +9,9 @@ toString */
     public int size() {
         return size;
     }
+    public abstract E get(int index);
+
+    public abstract String toString();
     /*
 >Logan
 indexOf
