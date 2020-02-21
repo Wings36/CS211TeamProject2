@@ -24,7 +24,9 @@ public abstract class AbstractList<E> implements List<E> {
 
 //>Quynh
 //add
-    public abstract void add (E value);
+    public void add (E value) {
+       return add(size, value);
+    }
 //add(int, E)
     public abstract void add(int index, E value);
 //remove
