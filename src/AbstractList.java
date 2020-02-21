@@ -8,17 +8,24 @@ public abstract class AbstractList<E> implements List<E> {
     public abstract E get(int index);
 //toString
     public abstract int size();
-    public abstract String toString();
 
 //>Logan
 //indexOf
+   public int indexOf(E value) {
+       for (int i = 0; i < size(); i++) {
+           if (value.equals(get(i))) {
+               return i;
+           }
+       }
+       return -1;
+    }
 //isEmpty
 //contains
 
 //>Quynh
 //add
     public void add (E value) {
-       return add(size, value);
+       add(size(), value);
     }
 //add(int, E)
     public abstract void add(int index, E value);
@@ -40,7 +47,4 @@ public abstract class AbstractList<E> implements List<E> {
             throw new IndexOutOfBoundsException("index: " + index);
         }
     }
-
-//test
-
 }
