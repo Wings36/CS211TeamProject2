@@ -28,8 +28,7 @@ public abstract class AbstractList<E> implements List<E> {
 //add(int, E)
     public abstract void add(int index, E value);
 //remove
-
-
+    public abstrac void remove(int index);
 
 
 //>Hon

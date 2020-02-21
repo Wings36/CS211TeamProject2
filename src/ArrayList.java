@@ -60,6 +60,7 @@ public class ArrayList<E> extends AbstractList<E> {
     // post: returns true if the given value is contained in the list,
     //       false otherwise
     public boolean contains(E value) {
+
         return indexOf(value) >= 0;
     }
 
