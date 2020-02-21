@@ -1,22 +1,5 @@
 import java.util.*;
 public abstract class AbstractList<E> implements List<E> {
-    private int size;
-    /*
->bogdan
-size
-get
-toString */
-    public int size() {
-        return size;
-    }
-    public abstract E get(int index);
-
-    public abstract String toString();
-    /*
->Logan
-indexOf
-isEmpty
-contains
 
 
 //>bogdan
@@ -25,6 +8,7 @@ contains
     public abstract E get(int index);
 //toString
     public abstract int size();
+    public abstract String toString();
 
 //>Logan
 //indexOf

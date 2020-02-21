@@ -35,8 +35,14 @@ public class ListClient3 {
         System.out.println("Does the list contain number 39? : " + list.contains(39));
         list.add(4, 420);
         System.out.println("Added number 420 to index 4" + list);
-        list.remove(39);
-        System.out.println("Removed number 39 from the list" + list);
+        list.set(4, 100);
+        System.out.println("Setting index number 4 to 100 :" + list);
+        //This should pass without saying anything
+        list.checkIndex(4);
+        //This should throw a IndexOutOfBoundsException
+        //list.checkIndex(100);
+        list.clear();
+        System.out.println("Clearing List: " + list);
 
 
     }
