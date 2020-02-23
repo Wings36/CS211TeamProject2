@@ -1,15 +1,31 @@
 import java.util.*;
 public abstract class AbstractList<E> implements List<E> {
 
+private int size;
 
 //>bogdan
 //size
+    public int size() {
+        return size;
+    }
+    /*public int getSize() {
+        return this.size;
+    }
+    public int setSize() {
+        return this.size;
+    } */
+    public void sizeIn() {
+        size++;  //to increment
+    }
+    public void sizeDe() {
+        size--; //to decrement
+    }
 //get
     public abstract E get(int index);
 //toString
-    public abstract int size();
+    public abstract String toString();
 
-//>Logan
+    //>Logan
 //indexOf
    public int indexOf(E value) {
        for (int i = 0; i < size(); i++) {

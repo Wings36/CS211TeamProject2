@@ -4,7 +4,7 @@ import java.util.*;
 
 public class ArrayList<E> extends AbstractList<E> {
     private E[] elementData; // list of values
-    private int size;        // current number of elements in the list
+   // private int size;        // current number of elements in the list
 
     public static final int DEFAULT_CAPACITY = 100;
 
@@ -25,9 +25,9 @@ public class ArrayList<E> extends AbstractList<E> {
     }
 
     // post: returns the current number of elements in the list
-    public int size() {
+    /*public int size() {
         return size;
-    }
+    } */
 
 
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
@@ -78,7 +78,7 @@ public class ArrayList<E> extends AbstractList<E> {
     public void add(E value) {
         ensureCapacity(size + 1);
         elementData[size] = value;
-        size++;
+        return sizeIn; //size++
     }
 
     // pre : 0 <= index <= size() (throws IndexOutOfBoundsException if not)
@@ -93,7 +93,7 @@ public class ArrayList<E> extends AbstractList<E> {
             elementData[i] = elementData[i - 1];
         }
         elementData[index] = (E) value;
-        size++;
+        return sizeIn; //size++
     }
 
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
@@ -104,7 +104,7 @@ public class ArrayList<E> extends AbstractList<E> {
             elementData[i] = elementData[i + 1];
         }
         elementData[size - 1] = null;
-        size--;
+        return sizeDe; //size--
     }
 
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)

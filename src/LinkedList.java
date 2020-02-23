@@ -5,7 +5,7 @@ import java.util.*;
 public class LinkedList<E> extends AbstractList<E> {
     private ListNode<E> front;  // first value in the list
     private ListNode<E> back;   // last value in the list
-    private int size;           // current number of elements
+    //private int size;           // current number of elements
 
     // post: constructs an empty list
     public LinkedList() {
@@ -15,9 +15,9 @@ public class LinkedList<E> extends AbstractList<E> {
     }
 
     // post: returns the current number of elements in the list
-    public int size() {
+    /*public int size() {
         return size;
-    }
+    } */
 
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
     // post: returns the value at the given index in the list
@@ -85,7 +85,7 @@ public class LinkedList<E> extends AbstractList<E> {
         ListNode<E> newNode = new ListNode<E>(value, current.next, current);
         current.next = newNode;
         newNode.next.prev = newNode;
-        size++;
+        return sizeIn; // size++
     }
 
     // post: appends all values in the given list to the end of this list
@@ -102,7 +102,7 @@ public class LinkedList<E> extends AbstractList<E> {
         ListNode<E> current = nodeAt(index - 1);
         current.next = current.next.next;
         current.next.prev = current;
-        size--;
+        return sizeDe; //size--
     }
 
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
@@ -201,7 +201,7 @@ public class LinkedList<E> extends AbstractList<E> {
             ListNode<E> prev2 = current.prev.prev;
             prev2.next = current;
             current.prev = prev2;
-            size--;
+            return sizeDe; //size--
             removeOK = false;
         }
     }
