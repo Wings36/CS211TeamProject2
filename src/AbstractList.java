@@ -20,7 +20,13 @@ public abstract class AbstractList<E> implements List<E> {
        return -1;
     }
 //isEmpty
+    public boolean isEmpty() {
+       return size() == 0;
+    }
 //contains
+    public boolean contains(E value) {
+        return indexOf(value) >= 0;
+    }
 
 //>Quynh
 //add
