@@ -15,8 +15,13 @@ private int size;
     public void sizeDe() {
         size--; //to decrement
     }
+    public void sizeInti() {
+        size = 0;
+    }
 //get
-    public abstract E get(int index);
+    public E get(int index) {
+        ListIterator list = E.listIterator();
+    }
 //toString
     public abstract String toString();
 

@@ -103,7 +103,7 @@ public class ArrayList<E> extends AbstractList<E> {
             elementData[i] = elementData[i + 1];
         }
         elementData[size() - 1] = null;
-         sizeDe(); //size--
+        sizeDe(); //size--
     }
 
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
