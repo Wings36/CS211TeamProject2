@@ -13,10 +13,7 @@ public class LinkedList<E> extends AbstractList<E> {
         clear();
     }
 
-    // post: returns the current number of elements in the list
-    /*public int size() {
-        return size;
-    } */
+
 
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
     // post: returns the value at the given index in the list
