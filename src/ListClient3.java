@@ -23,6 +23,7 @@ public class ListClient3 {
         list.add(234);
         list.add(39);
         list.add(934);
+
         System.out.println("adding numbers... \nIs the list empty? : " + list.isEmpty());
         System.out.println("List: " + list);
         System.out.println("The size of the list is :" + list.size());
@@ -42,7 +43,9 @@ public class ListClient3 {
         //This should throw a IndexOutOfBoundsException
         //list.checkIndex(100);
         list.clear();
-        System.out.println("Clearing List: " + list);
+        System.out.println("Clearing List");
+        //uncommenting line below should error out if clear() works
+        //System.out.println(list);
 
 
     }

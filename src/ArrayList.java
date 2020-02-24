@@ -15,18 +15,12 @@ public class ArrayList<E> extends AbstractList<E> {
             throw new IllegalArgumentException("capacity: " + capacity);
         }
         elementData = (E[]) new Object[capacity];
-        int size = 0;
     }
 
     // post: constructs an empty list of default capacity
     public ArrayList() {
         this(DEFAULT_CAPACITY);
     }
-
-    // post: returns the current number of elements in the list
-    /*public int size() {
-        return size;
-    } */
 
 
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
