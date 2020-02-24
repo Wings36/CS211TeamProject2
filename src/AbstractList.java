@@ -8,12 +8,7 @@ private int size;
     public int size() {
         return size;
     }
-    /*public int getSize() {
-        return this.size;
-    }
-    public int setSize() {
-        return this.size;
-    }*/
+
     public void sizeIn() {
         size++;  //to increment
     }
