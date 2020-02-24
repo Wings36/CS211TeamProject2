@@ -13,7 +13,7 @@ private int size;
     }
     public int setSize() {
         return this.size;
-    } */
+    }*/
     public void sizeIn() {
         size++;  //to increment
     }
