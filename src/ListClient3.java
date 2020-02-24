@@ -43,7 +43,7 @@ public class ListClient3 {
         //This should throw a IndexOutOfBoundsException
         //list.checkIndex(100);
         list.clear();
-        System.out.println("Clearing List");
+        System.out.println("Clearing List \n\n");
         //uncommenting line below should error out if clear() works
         //System.out.println(list);
 

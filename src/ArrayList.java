@@ -17,17 +17,10 @@ public class ArrayList<E> extends AbstractList<E> {
         elementData = (E[]) new Object[capacity];
     }
 
+
     // post: constructs an empty list of default capacity
     public ArrayList() {
         this(DEFAULT_CAPACITY);
-    }
-
-
-    // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
-    // post: returns the value at the given index in the list
-    public E get(int index) {
-        checkIndex(index);
-        return elementData[index];
     }
 
     // post: creates a comma-separated, bracketed version of the list
@@ -42,36 +35,6 @@ public class ArrayList<E> extends AbstractList<E> {
             result += "]";
             return result;
         }
-    }
-
-    // post : returns the position of the first occurrence of the given
-    //        value (-1 if not found)
-    public int indexOf(E value) {
-        for (int i = 0; i < size(); i++) {
-            if (elementData[i].equals(value)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    // post: returns true if list is empty, false otherwise
-    public boolean isEmpty() {
-        return size() == 0;
-    }
-
-    // post: returns true if the given value is contained in the list,
-    //       false otherwise
-    public boolean contains(E value) {
-
-        return indexOf(value) >= 0;
-    }
-
-    // post: appends the given value to the end of the list
-    public void add(E value) {
-        ensureCapacity(size() + 1);
-        elementData[size()] = value;
-        sizeIn(); //size++
     }
 
     // pre : 0 <= index <= size() (throws IndexOutOfBoundsException if not)

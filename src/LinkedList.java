@@ -14,15 +14,6 @@ public class LinkedList<E> extends AbstractList<E> {
     }
 
 
-
-    // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
-    // post: returns the value at the given index in the list
-    public E get(int index) {
-        checkIndex(index);
-        ListNode<E> current = nodeAt(index);
-        return current.data;
-    }
-
     // post: creates a comma-separated, bracketed version of the list
     public String toString() {
         if (size() == 0) {
@@ -37,37 +28,6 @@ public class LinkedList<E> extends AbstractList<E> {
             result += "]";
             return result;
         }
-    }
-
-    // post : returns the position of the first occurrence of the given
-    //        value (-1 if not found)
-    public int indexOf(E value) {
-        int index = 0;
-        ListNode<E> current = front.next;
-        while (current !=  back) {
-            if (current.data.equals(value)) {
-                return index;
-            }
-            index++;
-            current = current.next;
-        }
-        return -1;
-    }
-
-    // post: returns true if list is empty, false otherwise
-    public boolean isEmpty() {
-        return size() == 0;
-    }
-
-    // post: returns true if the given value is contained in the list,
-    //       false otherwise
-    public boolean contains(E value) {
-        return indexOf(value) >= 0;
-    }
-
-    // post: appends the given value to the end of the list
-    public void add(E value) {
-        add(size(), value);
     }
 
     // pre: 0 <= index <= size() (throws IndexOutOfBoundsException if not)
@@ -185,20 +145,6 @@ public class LinkedList<E> extends AbstractList<E> {
             current = current.next;
             removeOK = true;
             return result;
-        }
-
-        // pre : next() has been called without a call on remove (i.e., at most
-        //       one call per call on next)
-        // post: removes the last element returned by the iterator
-        public void remove() {
-            if (!removeOK) {
-                throw new IllegalStateException();
-            }
-            ListNode<E> prev2 = current.prev.prev;
-            prev2.next = current;
-            current.prev = prev2;
-            sizeDe(); //size--
-            removeOK = false;
         }
     }
 }

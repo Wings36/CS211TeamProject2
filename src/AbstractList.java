@@ -3,6 +3,7 @@ public abstract class AbstractList<E> implements List<E> {
 
 private int size;
 
+
     public AbstractList() {
         size = 0;
     }
@@ -10,7 +11,6 @@ private int size;
     public int size() {
         return size;
     }
-
     public void sizeIn() {
         size++;  //to increment
     }
@@ -18,11 +18,16 @@ private int size;
         size--; //to decrement
     }
 
-    public abstract E get(int index);
-
+    public E get(int index) {
+        Iterator<E> list = iterator();
+        E num = null;
+        for (int x = 0; x < index; x++) {
+            num = list.next();
+        }
+        return num;
+    }
     public abstract String toString();
-
-   public int indexOf(E value) {
+    public int indexOf(E value) {
        for (int i = 0; i < size(); i++) {
            if (value.equals(get(i))) {
                return i;
@@ -41,10 +46,21 @@ private int size;
     public void add (E value) {
        add(size(), value);
     }
+
+
+
     public abstract void add(int index, E value);
-    public abstract void remove(int index);
+    public void remove(int index) {
+        Iterator<E> list = iterator();
+        for (int x = 0; x < index; x++) {
+            list.next();
+        }
+        //list.next();
+        list.remove();
+    }
     public abstract void set(int index, E value);
     public abstract void clear();
+    public abstract Iterator<E> iterator();
 
     // post: throws an IndexOutOfBoundsException if the given index is
     //       not a legal index of the current list
