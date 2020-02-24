@@ -9,8 +9,8 @@ public class LinkedList<E> extends AbstractList<E> {
 
     // post: constructs an empty list
     public LinkedList() {
-        front = new ListNode<E>(null);
-        back = new ListNode<E>(null);
+        front = new ListNode<>(null);
+        back = new ListNode<>(null);
         clear();
     }
 
@@ -29,7 +29,7 @@ public class LinkedList<E> extends AbstractList<E> {
 
     // post: creates a comma-separated, bracketed version of the list
     public String toString() {
-        if (size == 0) {
+        if (size() == 0) {
             return "[]";
         } else {
             String result = "[" + front.next.data;
@@ -60,7 +60,7 @@ public class LinkedList<E> extends AbstractList<E> {
 
     // post: returns true if list is empty, false otherwise
     public boolean isEmpty() {
-        return size == 0;
+        return size() == 0;
     }
 
     // post: returns true if the given value is contained in the list,
@@ -71,21 +71,21 @@ public class LinkedList<E> extends AbstractList<E> {
 
     // post: appends the given value to the end of the list
     public void add(E value) {
-        add(size, value);
+        add(size(), value);
     }
 
     // pre: 0 <= index <= size() (throws IndexOutOfBoundsException if not)
     // post: inserts the given value at the given index, shifting subsequent
     //       values right
     public void add(int index, E value) {
-        if (index < 0 || index > size) {
+        if (index < 0 || index > size()) {
             throw new IndexOutOfBoundsException("index: " + index);
         }
         ListNode<E> current = nodeAt(index - 1);
-        ListNode<E> newNode = new ListNode<E>(value, current.next, current);
+        ListNode<E> newNode = new ListNode<>(value, current.next, current);
         current.next = newNode;
         newNode.next.prev = newNode;
-        return sizeIn; // size++
+          sizeIn(); // size++
     }
 
     // post: appends all values in the given list to the end of this list
@@ -102,7 +102,7 @@ public class LinkedList<E> extends AbstractList<E> {
         ListNode<E> current = nodeAt(index - 1);
         current.next = current.next.next;
         current.next.prev = current;
-        return sizeDe; //size--
+        sizeDe(); //size--
     }
 
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
@@ -117,7 +117,7 @@ public class LinkedList<E> extends AbstractList<E> {
     public void clear() {
         front.next = back;
         back.prev = front;
-        size = 0;
+        int size = 0;
     }
 
     // post: returns an iterator for this list
@@ -131,14 +131,14 @@ public class LinkedList<E> extends AbstractList<E> {
     //       is closer.
     private ListNode<E> nodeAt(int index) {
         ListNode<E> current;
-        if (index < size / 2) {
+        if (index < size() / 2) {
             current = front;
             for (int i = 0; i < index + 1; i++) {
                 current = current.next;
             }
         } else {
             current = back;
-            for (int i = size; i >= index + 1; i--) {
+            for (int i = size(); i >= index + 1; i--) {
                 current = current.prev;
             }
         }
@@ -201,7 +201,7 @@ public class LinkedList<E> extends AbstractList<E> {
             ListNode<E> prev2 = current.prev.prev;
             prev2.next = current;
             current.prev = prev2;
-            return sizeDe; //size--
+            sizeDe(); //size--
             removeOK = false;
         }
     }

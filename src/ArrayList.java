@@ -16,7 +16,7 @@ public class ArrayList<E> extends AbstractList<E> {
             throw new IllegalArgumentException("capacity: " + capacity);
         }
         elementData = (E[]) new Object[capacity];
-        size = 0;
+        int size = 0;
     }
 
     // post: constructs an empty list of default capacity
@@ -39,11 +39,11 @@ public class ArrayList<E> extends AbstractList<E> {
 
     // post: creates a comma-separated, bracketed version of the list
     public String toString() {
-        if (size == 0) {
+        if (size() == 0) {
             return "[]";
         } else {
             String result = "[" + elementData[0];
-            for (int i = 1; i < size; i++) {
+            for (int i = 1; i < size(); i++) {
                 result += ", " + elementData[i];
             }
             result += "]";
@@ -54,7 +54,7 @@ public class ArrayList<E> extends AbstractList<E> {
     // post : returns the position of the first occurrence of the given
     //        value (-1 if not found)
     public int indexOf(E value) {
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size(); i++) {
             if (elementData[i].equals(value)) {
                 return i;
             }
@@ -64,7 +64,7 @@ public class ArrayList<E> extends AbstractList<E> {
 
     // post: returns true if list is empty, false otherwise
     public boolean isEmpty() {
-        return size == 0;
+        return size() == 0;
     }
 
     // post: returns true if the given value is contained in the list,
@@ -76,35 +76,35 @@ public class ArrayList<E> extends AbstractList<E> {
 
     // post: appends the given value to the end of the list
     public void add(E value) {
-        ensureCapacity(size + 1);
-        elementData[size] = value;
-        return sizeIn; //size++
+        ensureCapacity(size() + 1);
+        elementData[size()] = value;
+        sizeIn(); //size++
     }
 
     // pre : 0 <= index <= size() (throws IndexOutOfBoundsException if not)
     // post: inserts the given value at the given index, shifting subsequent
     //       values right
     public void add(int index, E value) {
-        if (index < 0 || index > size) {
+        if (index < 0 || index > size()) {
             throw new IndexOutOfBoundsException("index: " + index);
         }
-        ensureCapacity(size + 1);
-        for (int i = size; i >= index + 1; i--) {
+        ensureCapacity(size() + 1);
+        for (int i = size(); i >= index + 1; i--) {
             elementData[i] = elementData[i - 1];
         }
         elementData[index] = (E) value;
-        return sizeIn; //size++
+        sizeIn(); //size++
     }
 
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
     // post: removes value at the given index, shifting subsequent values left
     public void remove(int index) {
         checkIndex(index);
-        for (int i = index; i < size - 1; i++) {
+        for (int i = index; i < size() - 1; i++) {
             elementData[i] = elementData[i + 1];
         }
-        elementData[size - 1] = null;
-        return sizeDe; //size--
+        elementData[size() - 1] = null;
+         sizeDe(); //size--
     }
 
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
@@ -116,10 +116,10 @@ public class ArrayList<E> extends AbstractList<E> {
 
     // post: list is empty
     public void clear() {
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size(); i++) {
             elementData[i] = null;
         }
-        size = 0;
+        int size = 0;
     }
 
     // post: appends all values in the given list to the end of this list
